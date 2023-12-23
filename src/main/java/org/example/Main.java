@@ -1,5 +1,7 @@
 package org.example;
 
+import org.json.JSONArray;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -98,5 +100,19 @@ public class Main {
         for (String s : SelectFormTable.get_Id_FirstName_LastName_HireDate_DescendingOrder()) {
             System.out.println(s);
         }
+        //<<<<<<вывод из Json>>>>>>>
+        for (JSONArray s : SelectFormTable.get_All())
+//            System.out.println(s.get(0) + " " + s.get(1) + " " + s.get(7));
+            System.out.println(
+                    "employe_id: " + s.get(0) + "\n\t" +
+                            "first_name: " + s.get(1) + "\n\t" +
+                            "last_name: " + s.get(2) + "\n\t" +
+                            "email: " + s.get(3) + "\n\t" +
+                            "phone_number: " + s.get(4) + "\n\t" +
+                            "hire_date: " + s.get(5) + "\n\t" +
+                            "job_id: " + s.get(6) + "\n\t" +
+                            "salary: " + s.get(7) + "\n\t" +
+                            "comission_pct: " + s.get(8) + "\n\t"
+            );
     }
 }
