@@ -85,23 +85,27 @@ public class Main {
         brTest.close();
 */
 //-------------Задания-----------------------------
+        /**
+         //<<<<<<вывод всех имен и Employee ID>>>>>>>get_Id_Name()
+         System.out.println();
+         for (String s : SelectFormTable.get_Id_Name()) {
+         System.out.println(s);
+         }
 
-        System.out.println();
-        for (String s : SelectFormTable.get_Id_Name()) {
-            System.out.println(s);
-        }
+         //<<<<<<вывод фамилии и даты рождения>>>>>>>get_LastName_HireDate()
+         System.out.println();
+         for (String s : SelectFormTable.get_LastName_HireDate()) {
+         System.out.println(s);
+         }
 
-        System.out.println();
-        for (String s : SelectFormTable.get_LastName_HireDate()) {
-            System.out.println(s);
-        }
-
-        System.out.println();
-        for (String s : SelectFormTable.get_Id_FirstName_LastName_HireDate_DescendingOrder()) {
-            System.out.println(s);
-        }
-        //<<<<<<вывод из Json>>>>>>>
-        for (JSONArray s : SelectFormTable.get_All())
+         //<<<<<<вывод имени и фамилии и Employee ID в порядке убывания номера Employee ID>>>>>>>get_Id_FirstName_LastName_HireDate_DescendingOrder()
+         System.out.println();
+         for (String s : SelectFormTable.get_Id_FirstName_LastName_HireDate_DescendingOrder()) {
+         System.out.println(s);
+         }
+         */
+//<<<<<<получение и вывод Json>>>>>>>get_All_to_JSONArray
+        for (JSONArray s : SelectFormTable.get_All_to_JSONArray())
 //            System.out.println(s.get(0) + " " + s.get(1) + " " + s.get(7));
             System.out.println(
                     "employe_id: " + s.get(0) + "\n\t" +

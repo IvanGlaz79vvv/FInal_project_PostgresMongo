@@ -17,7 +17,7 @@ public class SelectFormTable {
     public static final String ANSI_BLUE = "\033[0;34m";
      List<JSONArray> listJSONArray;
 
-    public static List<JSONArray> get_All() {
+    public static List<JSONArray> get_All_to_JSONArray() {
         List<JSONArray> JSONArray = new ArrayList<>();
 
         try (Connection connect = CreateConnection.getConnect()) {
