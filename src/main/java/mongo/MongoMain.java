@@ -21,7 +21,7 @@ public class MongoMain {
             var database = mongoClient.getDatabase("syn");
 
             MongoCollection<Document> todoCollection = database.getCollection("todo");
-/*
+
             /**>>>>>>>>> вставка <<<<<<<<<<<<*/
 //            todoCollection = database.getCollection("todo");
 //
