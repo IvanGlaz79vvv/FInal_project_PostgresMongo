@@ -14,17 +14,13 @@ import java.util.function.Consumer;
 public class MongoMain {
     public static void main(String[] args) throws SQLException {
         try (var mongoClient = MongoClients.create()) {
-            /*mongoClient.listDatabases();
+            mongoClient.listDatabases();
             mongoClient.listDatabaseNames()
                     .forEach((Consumer<String>) System.out::println);
 
             var database = mongoClient.getDatabase("syn");
 
-            MongoCollection<Document> todoCollection = database.getCollection("todo");*/
-
-            InsertToMongo.getPostgresToMongo(mongoClient);
-
-
+            MongoCollection<Document> todoCollection = database.getCollection("todo");
 /*
             /**>>>>>>>>> вставка <<<<<<<<<<<<*/
 //            todoCollection = database.getCollection("todo");
@@ -97,6 +93,8 @@ public class MongoMain {
 //            todoCollection.listIndexes()
 //                    .forEach((Consumer<Document>) System.out::println);
 
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
