@@ -7,31 +7,36 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Projections;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class MongoMain {
     public static void main(String[] args) throws SQLException {
-        try (var mongoClient = MongoClients.create()) {
-            mongoClient.listDatabases();
-            mongoClient.listDatabaseNames()
-                    .forEach((Consumer<String>) System.out::println);
+        InsertToMongo.getInsertToMongo();
+//        try (var mongoClient = MongoClients.create()) {
 
-            var database = mongoClient.getDatabase("syn");
+//            mongoClient.listDatabases();
+//            mongoClient.listDatabaseNames()
+//                    .forEach((Consumer<String>) System.out::println);
 
-            MongoCollection<Document> todoCollection = database.getCollection("todo");
+//            var database = mongoClient.getDatabase("syn");
+//            MongoCollection<Document> todoCollection = database.getCollection("todo");
+
 
             /**>>>>>>>>> вставка <<<<<<<<<<<<*/
 //            todoCollection = database.getCollection("todo");
 //
-//            var todoDocment = new Document(Map.of(
+//            var todoDocument = new Document(Map.of(
 //                    "_id", new ObjectId(),
 //                    "task", "Drynk some coffee",
 //                    "dataCreated", LocalDateTime.now(),
 //                    "done", false));
 //
-//            todoCollection.insertOne(todoDocment);
+//            todoCollection.insertOne(todoDocument);
 //            database.listCollectionNames()
 //                    .forEach((Consumer<String>) System.out::println);
 //            database.listCollections()
@@ -93,8 +98,8 @@ public class MongoMain {
 //            todoCollection.listIndexes()
 //                    .forEach((Consumer<Document>) System.out::println);
 
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }
